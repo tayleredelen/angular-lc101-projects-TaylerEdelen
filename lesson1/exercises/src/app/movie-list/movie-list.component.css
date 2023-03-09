@@ -1,0 +1,13 @@
+.movies {
+    color: orangered;
+    font-size: large;
+ }
+ /* .movies calls on entire class */
+ /* a) line 2, text for heading and list items any color except black */
+/* c) line 3, font size should be large enough to easily read*/
+
+ h3 {
+    text-align: center;
+ }
+ /* h3 calls on "Movies to Watch" header */
+ /* b) line 9, movie list centered heading*/

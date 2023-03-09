@@ -1,0 +1,21 @@
+.chores {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    color: lime;
+}
+/* .chores calls on entire chores class in html */
+/* a) line 2-3, diff font and large */
+/* b) line 4, diff color than movie list but not black */
+
+
+h3 {
+    text-decoration: underline;
+}
+/* h3 calls on chores header in html */
+/* c) line 12, chores list should have underlined heading */
+
+ul {
+    font-style: italic;
+}
+/* ul calls on list in html */
+/* d) line 18, chores in list should be italicized */
