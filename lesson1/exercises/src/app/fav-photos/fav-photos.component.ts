@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavPhotosComponent implements OnInit {
   photosTitle = 'Groovy Pics';
-  image1 = 'https://www.launchcode.org/assets/icons/target-00c7a0bc7776901e3c5cdc4c36c465f19e41a249bc7267a595f0bfa14ab944b7.png';
+  image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9aLdzjpfdvPmJP_-eOBAbTAzMxhtFQ3eEeFy2HBM4MmEUvJlzCfMA9FR1d0ZVgxPjiUg&usqp=CAU';
   image2 = 'https://outline-prod.imgix.net/20191127-FUrZgJqlpdctKmNBTT4I?auto=format&q=60&w=1280&s=8a4c10f929fafc391c1afd9a191b2fa7';
-  image3 = '';
+  image3 = 'https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-06/Sphynx.1.jpg?h=ee36b89e&itok=2fNViXNl';
 
   constructor() { }
 
