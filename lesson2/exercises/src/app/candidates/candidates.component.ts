@@ -26,7 +26,7 @@ export class CandidatesComponent implements OnInit {
   // Code the addToCrew function here:
 //addToCrew() function takes an object as a parameter, person we are adding is parameter
 //if candidate is not (use ! bang) part of the crew array, push them into crew array. Use .includes and .push since it's an array
-function addToCrew(person: object) {
+addToCrew(person: object): void {
   if (!this.crew.includes(person)) {
     this.crew.push(person)
   }
