@@ -5,37 +5,61 @@
         <div class="candidates col-3">
             <h2>Candidates</h2>
             <ol>
-                <li>Use *ngFor to automatically list all of the candidates' names.</li>
+                <li *ngFor="let candidate of candidates" (click)="selected = candidate">{{candidate.name}}</li>
+<!-- Use *ngFor in the li tag to loop over the candidates array and display each name in an ordered list
+Add a click event to the li tag. When a user clicks ona name, set the variable selected to be equal to the chosen candidate -->
             </ol>
         </div>
     
         <div class="data col-3">
             <h2>Candidate Data</h2>
-            <p> <!-- Add an *ngIf to this tag to display the selected candidate's data-->
-                {{selected.name}}
+            <p *ngIf="selected" > 
+<!--Use *ngIf inside the p tag to check if a candidate has been seelcted. If so, display labels and data-->
+                Name: {{selected.name}} <br>
+                Age: {{selected.data.age}} <br>
+                Mass: {{selected.data.mass}} <br>
+                Sidekick: {{selected.data.sidekick}}
             </p>
+<!-- In the p element, add labels for candidate's name, age, mass, and sidekick. br tags are line breaks to create list format.  -->
+<!-- age, mass, and sidekick have data added since they are within data object in the candidates array in candidates.c.ts file -->
         </div>
     
         <div class="centered col-3">
             <h2>Sidekick</h2>
-            <!-- Use *ngIf and the correct placeholder to display a sidekick's image -->
-            <img src="{{placeholder}}" alt="OOPS! No image available."/>
+<!-- Use *ngIf and the correct placeholder to display a sidekick's image -->
+<!-- Replace the generic {{placeholder}} with the image property of the candidate -->
+        <div *ngIf="selected">
+            <img src="{{selected.image}}" alt="OOPS! No image available."/>
+        </div>
         </div>
 
         <div class="crew col-3">
             <h2>Selected Crew</h2>
             <ul>
-                <li>Use *ngFor to list the selected crew.</li>
+                <li *ngFor="let member of crew">{{member.name}}</li>
+<!-- Use ngFor to loop over crew array and display each name -->
             </ul>
-            <!-- Add a "Clear Crew List" button here. -->
+            <button *ngIf="crew.length !== 0" (click)="crew = []">Clear Crew List</button>
+<!-- Add a "Clear Crew List" button here. -->
+<!-- Use ngIf to make button appear only when crew array contains data, (crew.length is not 0) -->
+<!-- Add a click event that clears the crew array, use crew = empty array -->
         </div>
     </div>
     <hr>
     <div class = 'centered'>
-        <button>Clear Data & Image</button>
-        <!-- Add a "Send on Mission" button here. -->
+        <button (click) = "selected = false" >Clear Data & Image</button>
+<!-- In the button tag for Clear Data & Image add a click event that sets the selected to false -->
+        <button (click) = "addToCrew(selected)" >Send on Mission</button>
+<!-- Add a click event to the button to call the addToCrew function. When clicked, pass the selected candidate as the argument. -->
     </div>
 </div>
+
+
+
+
+
+
+
 
 <!-- The code below is for one of the Bonus Missions -->
 <ng-template #editMission>
